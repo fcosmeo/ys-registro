@@ -16,19 +16,20 @@ export class PersonService {
   }
 
   getPeople(){
-    return this._http.get(this.url+'people').map(res => res.json());
+    return this._http.get(this.url + 'people').map(res => res.json());
   }
 
   getPerson(email) {
-    return this._http.get(this.url+'person/'+email).map(res => res.json());
+    return this._http.get(this.url + 'person/' + email).map(res => res.json());
   }
 
   addPerson(person: Person) {
     let json = JSON.stringify(person);
-    let params = 'json='+json;
-    let headers = new Headers({'Content-Type':'application/x-www-form-urlencoded'});
+    console.log(json);
+    let params = 'json=' + json;
+    let headers = new Headers({'Content-Type': 'application/x-www-form-urlencoded'});
 
-    return this._http.post(this.url+'people', params, {headers: headers})
+    return this._http.post(this.url + 'people', params, {headers: headers})
       .map(res => res.json());
   }
 }

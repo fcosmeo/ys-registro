@@ -2,6 +2,10 @@ body{
     background-color: white;
 }
 
+#form-person label{
+  margin-top: 10px;
+}
+
 .form_gen{
     margin: auto;
     overflow: hidden;
@@ -19,7 +23,6 @@ body{
     height: 478px;
     width: 347px;
     background-color: darkgreen;
-    background-image: url("../img/image1.png");
 }
 
 .form_gen_right{
@@ -31,9 +34,9 @@ body{
 
 .form_gen_right_top{
     background-color: white;
-    padding-top: 10px;
+    padding-top: 5px;
     text-align: center;
-    height: 90px;
+    height: 80px;
     width: 300px;
     overflow: hidden;
 }

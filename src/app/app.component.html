@@ -1,9 +1,3 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-</div>
 <div style="padding-top: 30px;">
   <div class="form_gen" style="">
     <div class="form_gen_left">
@@ -14,7 +8,38 @@
         <img src="http://yourstyle.net.pe/yourstyle-backend/uploads/ys-register/img_logo_main_1.png" alt="Generic placeholder thumbnail"/>
       </div>
       <div class="form_gen_right_body">
+        <form #formPerson="ngForm" (ngSubmit)="onSubmit()" class="" id="form-person">
+          <div align="center" style="height: 8px;padding-top: 4px;">
+            <b><label>SUSCRIPCIÓN</label></b>
+          </div>
+          <br/>
+          <div style="text-align: left;">
+          <label></label>
+          Nombres<span *ngIf="!nombre.valid && nombre.touched" class="label label-danger">El nombre es obligatorio</span>
+          <input type="text" #nombre="ngModel" name="nombre" [(ngModel)]="person.first_name" class="form-control" placeholder="Nombres" required />
 
+          <label></label>
+          Apellidos<span *ngIf="!apellido.valid && apellido.touched" class="label label-danger">El apellido es obligatorio</span>
+          <input type="text" #apellido="ngModel" name="apellido" [(ngModel)]="person.last_name" class="form-control" placeholder="Apellidos" required />
+
+          <label></label>
+          DNI<span *ngIf="!dni.valid && dni.touched" class="label label-danger">El DNI es obligatorio</span>
+          <input type="number" #dni="ngModel" name="dni" [(ngModel)]="person.dni" class="form-control" placeholder="DNI" required pattern=".{8}"/>
+
+          <label></label>
+          Fecha de Nacimiento
+          <input type="date" #fechaNacimiento="ngModel" name="fechaNacimiento" [(ngModel)]="person.birth_date" class="form-control" placeholder="Fecha de Nacimiento" required />
+
+          <label></label>
+          Correo<span *ngIf="!correo.valid && correo.touched" class="label label-danger">Ingresar el correo correctamente</span>
+          <input type="text" #correo="ngModel" name="correos" [(ngModel)]="person.email" class="form-control" placeholder="Correo" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" style="text-transform: lowercase;"/>
+
+          <label></label>
+          Celular<span *ngIf="!celular.valid && celular.touched" class="label label-danger">El Número de Celular debe contener 9 caracteres</span>
+          <input type="number" #celular="ngModel" name="celular" [(ngModel)]="person.cellPhone" class="form-control" placeholder="Celular" pattern=".{9}"/>
+          </div>
+          <input type="submit" value="Registrar" [disabled]="!formPerson.form.valid" class="btn btn-success" style="width:100%;background-color:black"/>
+        </form>
       </div>
     </div>
   </div>
