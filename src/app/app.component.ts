@@ -17,7 +17,7 @@ export class AppComponent {
   constructor(
     private _personService: PersonService
   ) {
-    this.person = new Person(0, '', '', '', '', '', '', 1, 1);
+    this.person = new Person(0, '', '', '', '', '', '', 1);
   }
 
   ngOnInit() {

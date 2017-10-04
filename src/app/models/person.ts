@@ -6,8 +6,7 @@ export class Person {
     public dni: string,
     public birth_date: string,
     public email: string,
-    public cellPhone: string,
-    public statusId: number,
-    public sendMail: number
+    public cell_phone: string,
+    public send_mail: number
   ) {}
 }

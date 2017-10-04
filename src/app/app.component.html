@@ -1,11 +1,11 @@
 <div style="padding-top: 30px;">
   <div class="form_gen" style="">
     <div class="form_gen_left">
-      <img src="http://yourstyle.net.pe/yourstyle-backend/uploads/ys-register/img_register_1.png" alt="Generic placeholder thumbnail"/>
+      <img src="http://yourstyle.com.pe/backend/uploads/register/img_register_1.png" alt="Generic placeholder thumbnail"/>
     </div>
     <div class="form_gen_right">
       <div class="form_gen_right_top">
-        <img src="http://yourstyle.net.pe/yourstyle-backend/uploads/ys-register/img_logo_main_1.png" alt="Generic placeholder thumbnail"/>
+        <img src="http://yourstyle.com.pe/backend/uploads/register/img_logo_main_1.png" alt="Generic placeholder thumbnail"/>
       </div>
       <div class="form_gen_right_body">
         <form #formPerson="ngForm" (ngSubmit)="onSubmit()" class="" id="form-person">
@@ -36,7 +36,7 @@
 
           <label></label>
           Celular<span *ngIf="!celular.valid && celular.touched" class="label label-danger">El Número de Celular debe contener 9 caracteres</span>
-          <input type="number" #celular="ngModel" name="celular" [(ngModel)]="person.cellPhone" class="form-control" placeholder="Celular" pattern=".{9}"/>
+          <input type="number" #celular="ngModel" name="celular" [(ngModel)]="person.cell_phone" class="form-control" placeholder="Celular" pattern=".{9}"/>
           </div>
           <input type="submit" value="Registrar" [disabled]="!formPerson.form.valid" class="btn btn-success" style="width:100%;background-color:black"/>
         </form>
