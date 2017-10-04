@@ -8,7 +8,7 @@
         <img src="http://yourstyle.com.pe/backend/uploads/register/img_logo_main_1.png" alt="Generic placeholder thumbnail"/>
       </div>
       <div class="form_gen_right_body">
-        <form #formPerson="ngForm" (ngSubmit)="onSubmit()" class="" id="form-person">
+        <form #formPerson="ngForm" (ngSubmit)="onSubmit(); formPerson.reset();" class="" id="form-person">
           <div align="center" style="height: 0px;padding-top: 3px;">
             <b>SUSCRIPCIÓN</b>
           </div>
@@ -26,23 +26,22 @@
           DNI<span *ngIf="!dni.valid && dni.touched" class="label label-danger">El DNI es obligatorio</span>
           <input type="number" #dni="ngModel" name="dni" [(ngModel)]="person.dni" class="form-control" placeholder="DNI" required pattern=".{8}"/>
 
-
           <label></label>
           Fecha de Nacimiento
-          <input type="date" #fechaNacimiento="ngModel" name="fechaNacimiento" [(ngModel)]="person.birth_date" class="form-control" placeholder="Fecha de Nacimiento" required />
+          <input type="date" #fechaNacimiento="ngModel" name="fechaNacimiento" [(ngModel)]="person.birth_date" class="form-control" placeholder="Fecha de Nacimiento"/>
 
           <label></label>
           Correo<span *ngIf="!correo.valid && correo.touched" class="label label-danger">Ingresar el correo correctamente</span>
           <input type="text" #correo="ngModel" name="correos" [(ngModel)]="person.email" class="form-control" placeholder="Correo" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" style="text-transform: lowercase;"/>
 
           <label></label>
-          Celular<span *ngIf="!celular.valid && celular.touched" class="label label-danger">El Número de Celular debe contener 9 caracteres</span>
+          Celular
           <input type="number" #celular="ngModel" name="celular" [(ngModel)]="person.cell_phone" class="form-control" placeholder="Celular" pattern=".{9}"/>
           </div>
           <input type="submit" value="Registrar" [disabled]="!formPerson.form.valid" class="btn btn-success" style="width:100%;background-color:black"/>
         </form>
       </div>
-      {{message}}
+      <span class="label label-danger">{{message}}</span>
     </div>
   </div>
 </div>

@@ -34,12 +34,12 @@ export class AppComponent {
     this._personService.addPerson(this.person).subscribe(
       response => {
         if (response.code == 200) {
-          this.message = 'Registro Exitoso';
-          this.person = null;
-          this.person = new Person(0, '', '', '', '', '', '', 1);
-          console.log('app.component.ts cargado...');
-        }else {
+          this.message = response.message;
+          this.person = new Person(0, '', '', '', null, '', '', 1);
           console.log(response);
+        }else {
+            console.log(response);
+            this.message = response.message;
         }
       },
       error => {
