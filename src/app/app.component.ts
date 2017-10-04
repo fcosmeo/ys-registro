@@ -13,6 +13,7 @@ import { GLOBAL } from './services/global';
 export class AppComponent {
   public title: string;
   public person: Person;
+  public message: string;
 
   constructor(
     private _personService: PersonService
@@ -33,6 +34,9 @@ export class AppComponent {
     this._personService.addPerson(this.person).subscribe(
       response => {
         if (response.code == 200) {
+          this.message = 'Registro Exitoso';
+          this.person = null;
+          this.person = new Person(0, '', '', '', '', '', '', 1);
           console.log('app.component.ts cargado...');
         }else {
           console.log(response);
@@ -44,4 +48,3 @@ export class AppComponent {
     );
   }
 }
-

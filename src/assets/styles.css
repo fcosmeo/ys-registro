@@ -34,9 +34,9 @@ body{
 
 .form_gen_right_top{
     background-color: white;
-    padding-top: 5px;
+    padding-top: 4px;
     text-align: center;
-    height: 80px;
+    height: 76px;
     width: 300px;
     overflow: hidden;
 }

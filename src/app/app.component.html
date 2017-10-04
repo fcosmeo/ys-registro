@@ -9,8 +9,8 @@
       </div>
       <div class="form_gen_right_body">
         <form #formPerson="ngForm" (ngSubmit)="onSubmit()" class="" id="form-person">
-          <div align="center" style="height: 8px;padding-top: 4px;">
-            <b><label>SUSCRIPCIÓN</label></b>
+          <div align="center" style="height: 0px;padding-top: 3px;">
+            <b>SUSCRIPCIÓN</b>
           </div>
           <br/>
           <div style="text-align: left;">
@@ -25,6 +25,7 @@
           <label></label>
           DNI<span *ngIf="!dni.valid && dni.touched" class="label label-danger">El DNI es obligatorio</span>
           <input type="number" #dni="ngModel" name="dni" [(ngModel)]="person.dni" class="form-control" placeholder="DNI" required pattern=".{8}"/>
+
 
           <label></label>
           Fecha de Nacimiento
@@ -41,6 +42,7 @@
           <input type="submit" value="Registrar" [disabled]="!formPerson.form.valid" class="btn btn-success" style="width:100%;background-color:black"/>
         </form>
       </div>
+      {{message}}
     </div>
   </div>
 </div>
